@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Calendar</title>
+    <title>Stylized Calendar</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,70 +26,89 @@
             text-align: center;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             padding: 20px;
             width: 100%;
             max-width: 500px;
+            position: relative;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            background-image: url('BG.jpg'); /* Replace 'your-image.jpg' with your image file path */
+            border-radius: 15px;
+            overflow: hidden;
+            background-image: url('BG.jpg'); /* Replace with your image file path */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         thead td {
-            font-size: 1.5em;
-            background: rgba(108, 99, 255, 0.8);
-            color: black;
-            padding: 15px;
-            border-radius: 10px 10px 0 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            padding: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         tbody th,
         tbody td {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
         }
 
         tbody td {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.356);
+            color: #333;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        tbody td.weekend {
+            background: rgba(107, 99, 255, 0.432);
+            color: white;
         }
 
         tbody td:hover {
-            background: rgba(255, 239, 213, 0.8);
+            background: rgba(255, 239, 213, 0.9);
             color: black;
+            transform: scale(1.1);
             cursor: pointer;
         }
 
         button {
-            background: #6c63ff;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
 
         button:hover {
-            background: #5a54d7;
+            background: linear-gradient(135deg, #5a54d7, #6e8efb);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
         }
 
         @media (max-width: 600px) {
             table {
-                font-size: 0.8em;
+                font-size: 0.9em;
             }
 
             thead td {
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
         }
     </style>
@@ -100,7 +119,7 @@
         <table>
             <thead>
                 <tr>
-                    <td colspan="7">July 2025</td>
+                    <td colspan="7">July 2024</td>
                 </tr>
             </thead>
             <tbody>
@@ -114,57 +133,56 @@
                     <th>SA</th>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td class="weekend">30</td>
                     <td>1</td>
                     <td>2</td>
                     <td>3</td>
                     <td>4</td>
                     <td>5</td>
+                    <td class="weekend">6</td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td>7</td>
+                    <td class="weekend">7</td>
                     <td>8</td>
                     <td>9</td>
                     <td>10</td>
                     <td>11</td>
                     <td>12</td>
+                    <td class="weekend">13</td>
                 </tr>
                 <tr>
-                    <td>13</td>
-                    <td>14</td>
+                    <td class="weekend">14</td>
                     <td>15</td>
                     <td>16</td>
                     <td>17</td>
                     <td>18</td>
                     <td>19</td>
+                    <td class="weekend">20</td>
                 </tr>
                 <tr>
-                    <td>20</td>
-                    <td>21</td>
+                    <td class="weekend">21</td>
                     <td>22</td>
                     <td>23</td>
                     <td>24</td>
                     <td>25</td>
                     <td>26</td>
+                    <td class="weekend">27</td>
                 </tr>
                 <tr>
-                    <td>27</td>
-                    <td>28</td>
+                    <td class="weekend">28</td>
                     <td>29</td>
                     <td>30</td>
                     <td>31</td>
                     <td></td>
                     <td></td>
+                    <td class="weekend"></td>
                 </tr>
             </tbody>
         </table>
-        <button id="downloadBtn">Download as PDF</button>
+        <button id="downloadBtn">Download as Image</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function () {
             const calendar = document.getElementById('calendar');
@@ -174,16 +192,10 @@
 
             html2canvas(calendar).then(canvas => {
                 button.style.display = 'block';
-
-                const imgData = canvas.toDataURL('image/png');
-                const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF();
-
-                const imgWidth = 190; // Adjust width
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-                pdf.addImage(imgData, 'PNG', 5, 10, imgWidth, imgHeight);
-                pdf.save('calendar.pdf');
+                const link = document.createElement('a');
+                link.download = 'calendar.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
             });
         });
     </script>
